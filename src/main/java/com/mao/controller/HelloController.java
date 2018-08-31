@@ -9,6 +9,11 @@ import java.util.Map;
 @Controller
 public class HelloController {
 
+//    @RequestMapping({"/","/index"})
+//    public String index(){
+//        return "index";
+//    }
+
     @RequestMapping("/success")
     public String success(Map<String,Object> map){
         map.put("hello", "<h2>你好！</h2>");
