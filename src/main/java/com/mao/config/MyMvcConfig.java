@@ -8,7 +8,6 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
 //使用WebMvcConfigurerAdapter可以扩展springmvc的功能
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
@@ -40,7 +39,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 //SpringBoot已经做好了静态资源映射
                 registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
                         .excludePathPatterns("/index.html",
-                                "/","/webjars/**","/asserts/**","/user/login");
+                                "/","/webjars/**","/asserts/**","/user/login","/swagger-resources/**","/swagger-ui.html");
             }
         };
         return adapter;
@@ -51,5 +50,4 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
         return new MyLocaleResolver();
     }
-
 }
